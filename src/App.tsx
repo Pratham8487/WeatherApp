@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import NotFoundPage from "./pages/filenotfound/NotFoundPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import MonthlyForecast from "./pages/monthlyforecast/monthlyForecast";
 import Layout from "./components/Layout";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="monthly-forecast" element={<MonthlyForecast />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

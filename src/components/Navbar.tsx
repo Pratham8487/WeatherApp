@@ -59,6 +59,22 @@ export default function OpenWeatherNavbar() {
 
         <div className="hidden md:flex items-center space-x-8">
           <Link
+            to="/"
+            className={`transition-colors duration-200 relative group py-2 ${
+              isActivePath("/") ? "text-orange-400" : "hover:text-orange-400"
+            }`}
+          >
+            <span>Home</span>
+            <span
+              className={`absolute bottom-0 left-0 w-full h-0.5 bg-orange-400 transform ${
+                isActivePath("/")
+                  ? "scale-x-100"
+                  : "scale-x-0 group-hover:scale-x-100"
+              } transition-transform duration-200`}
+            ></span>
+          </Link>
+
+          <Link
             to="/dashboard"
             className={`transition-colors duration-200 relative group py-2 ${
               isActivePath("/dashboard")
@@ -95,9 +111,9 @@ export default function OpenWeatherNavbar() {
           </Link>
 
           <Link
-            to="/monthlyforecast"
+            to="/monthly-forecast"
             className={`transition-colors duration-200 relative group py-2 ${
-              isActivePath("/monthlyforecast")
+              isActivePath("/monthly-forecast")
                 ? "text-orange-400"
                 : "hover:text-orange-400"
             }`}
@@ -105,7 +121,7 @@ export default function OpenWeatherNavbar() {
             <span>Monthly Forecast</span>
             <span
               className={`absolute bottom-0 left-0 w-full h-0.5 bg-orange-400 transform ${
-                isActivePath("/monthlyforecast")
+                isActivePath("/monthly-forecast")
                   ? "scale-x-100"
                   : "scale-x-0 group-hover:scale-x-100"
               } transition-transform duration-200`}
@@ -163,6 +179,16 @@ export default function OpenWeatherNavbar() {
           {mobileMenuOpen && (
             <div className="absolute top-20 right-0 left-0 bg-gray-800 shadow-lg py-2 px-4 flex flex-col space-y-3">
               <Link
+                to="/"
+                className={`py-2 ${
+                  isActivePath("/")
+                    ? "text-orange-400"
+                    : "hover:text-orange-400"
+                }`}
+              >
+                Home
+              </Link>
+              <Link
                 to="/dashboard"
                 className={`py-2 ${
                   isActivePath("/dashboard")
@@ -183,9 +209,9 @@ export default function OpenWeatherNavbar() {
                 Maps
               </Link>
               <Link
-                to="/monthlyforecast"
+                to="/monthly-forecast"
                 className={`py-2 ${
-                  isActivePath("/monthlyforecast")
+                  isActivePath("/monthly-forecast")
                     ? "text-orange-400"
                     : "hover:text-orange-400"
                 }`}

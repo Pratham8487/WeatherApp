@@ -67,28 +67,6 @@ export const useWeatherByCoordinates = (lat: number, lon: number) => {
     }
   );
 
-  // const {
-  //   data: forecast,
-  //   isLoading: forecastLoading,
-  //   error: forecastError,
-  // } = useQuery(
-  //   ["forecast", lat, lon],
-  //   async () => {
-  //     const { data } = await weatherInstance.get("/forecast", {
-  //       params: {
-  //         lat,
-  //         lon,
-  //         units: "metric",
-  //         appid: API_KEY,
-  //       },
-  //     });
-  //     console.log("Forecast data:", data);
-  //     return data;
-  //   },
-  //   {
-  //     enabled: !!lat && !!lon,
-  //   }
-  // );
   const {
     data: forecast,
     isLoading: forecastLoading,
